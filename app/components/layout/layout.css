@@ -1,0 +1,54 @@
+body {
+	min-width: 320px;
+	height: 100%;
+	margin: 0;
+	line-height: 1.5rem;
+	font-family: "TT Polls", serif;
+	color: #0d0d86;
+	font-feature-settings:
+		"tnum" on,
+		"lnum" on;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: transparent;
+	overflow: hidden scroll;
+	overflow-anchor: none;
+}
+
+main {
+	box-sizing: border-box;
+	max-width: 928px;
+	min-height: 100%;
+	margin-inline: auto;
+	padding: 60px 24px 48px;
+	background-color: var(--color-white);
+	background-image: linear-gradient(transparent 47px, #00008026 48px);
+	background-size: 48px 48px;
+	box-shadow: 0 1px 4px #0000005e;
+}
+
+@media (min-width: 768px) {
+	main {
+		padding-inline: 48px;
+	}
+}
+
+@media (min-width: 928px) {
+	body {
+		background-color: #76726e;
+		background-image: url("/dabt/images/back.webp");
+		background-attachment: fixed;
+	}
+}
+
+@media print {
+	body {
+		color: #000000;
+		background: none;
+	}
+
+	main {
+		padding: 0;
+		background: none;
+		box-shadow: none;
+	}
+}

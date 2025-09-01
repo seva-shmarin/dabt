@@ -1,0 +1,42 @@
+.toc {
+	margin: 0 0 -12px;
+	padding: 0;
+	list-style: none;
+}
+
+.toc__item {
+	counter-increment: items;
+}
+
+.toc__link {
+	display: flex;
+	align-items: flex-end;
+	gap: 12px;
+	text-decoration: none;
+}
+
+.toc__link::before {
+	content: counter(items);
+	order: 3;
+}
+
+.toc__link::after {
+	content: "";
+	flex-grow: 1;
+	order: 2;
+	border-bottom: 1px dashed;
+	transform: translateY(-12px);
+}
+
+.toc__content {
+	max-width: 65%;
+	margin-left: 1.25em;
+	text-align-last: right;
+	text-indent: -1.25em;
+}
+
+@media print {
+	.toc {
+		page-break-after: avoid;
+	}
+}
