@@ -19,7 +19,7 @@ export async function renderAmpAssets() {
 	}
 
 	return html`
-		<style amp-custom>${cssCache}</style>
+		<style amp-custom>${cssCache}html{scrollbar-gutter:stable}main{min-height:100dvh}</style>
 		${APM_ASSETS_TEMPLATE}
 	`;
 }

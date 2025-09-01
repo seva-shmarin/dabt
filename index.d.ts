@@ -18,8 +18,15 @@ declare global {
 		heading?: string;
 		isAmp?: boolean;
 		isDev?: boolean;
+		nav: NavData;
 		pageTemplate?: string;
 		pathname?: string;
+	};
+
+	type NavData = {
+		next: string;
+		prev: string;
+		toc?: string;
 	};
 
 	type Route = {

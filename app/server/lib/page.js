@@ -33,7 +33,14 @@ function renderUrlMeta(pathname, isAmp) {
 }
 
 /** @type {(data: LayoutData) => Promise<string>} */
-export async function renderPage({ isAmp = false, description = "", heading = "", pageTemplate = "", pathname = "" }) {
+export async function renderPage({
+	isAmp = false,
+	description = "",
+	heading = "",
+	nav,
+	pageTemplate = "",
+	pathname = "",
+}) {
 	const title = [PROJECT_TITLE, heading].filter(Boolean).join(". ");
 	const assetsTemplate = isAmp ? await renderAmpAssets() : renderAssets();
 
@@ -69,8 +76,7 @@ export async function renderPage({ isAmp = false, description = "", heading = ""
 				<link rel="preload" href="/dabt/images/back.webp" as="image" type="image/webp" media="(min-width: 928px)">
 			</head>
 
-			${renderLayout({ heading, isAmp, isDev, pathname, pageTemplate })}
-
+			${renderLayout({ heading, isAmp, isDev, nav, pathname, pageTemplate })}
 		</html>
 	`;
 }
